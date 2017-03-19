@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "636253964120",
+    "firebase_url": "https://mokletchat.firebaseio.com",
+    "project_id": "mokletchat",
+    "storage_bucket": "mokletchat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636253964120:android:05361f15441fba49",
+        "android_client_info": {
+          "package_name": "id.sch.smktelkom_mlg.project2.xirpl608202231.mocha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636253964120-irqbi4dcb7tvaumoip7b0rel97a8ba55.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXxOTvn-ztq-oyBK_VMT4mRqWnHVs19Hk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
