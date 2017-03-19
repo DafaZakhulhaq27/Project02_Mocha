@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "636253964120-ie2ntb64j7bqlj1evdn057mmhtvevkh7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.sch.smktelkom_mlg.project2.xirpl608202231.mocha",
+            "certificate_hash": "9a71c3fc8eae68752b5319c90c4165f10e94e2c5"
+          }
+        },
+        {
           "client_id": "636253964120-irqbi4dcb7tvaumoip7b0rel97a8ba55.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "636253964120-irqbi4dcb7tvaumoip7b0rel97a8ba55.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

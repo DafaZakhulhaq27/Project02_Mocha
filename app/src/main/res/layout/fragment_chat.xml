@@ -34,7 +34,7 @@
     </android.support.design.widget.TextInputLayout>
 
     <ListView
-        android:id="@+id/list_of_messages"
+        android:id="@+id/list_of_chat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/fab"

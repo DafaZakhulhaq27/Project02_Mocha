@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Main extends AppCompatActivity {
 
     FirebaseAuth firebaseAuth;
+    private String nickname = "";
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
