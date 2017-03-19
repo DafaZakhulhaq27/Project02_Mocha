@@ -2,8 +2,6 @@ package id.sch.smktelkom_mlg.project2.xirpl608202231.mocha;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -70,14 +68,14 @@ public class Main extends AppCompatActivity {
         FirebaseUser user = firebaseAuth.getCurrentUser();
         setTitle(user.getEmail());
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
 
     }
 
@@ -157,6 +155,11 @@ public class Main extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
+            if (position == 0)
+
+                return new Chat();
+            else
+
             return PlaceholderFragment.newInstance(position + 1);
         }
 
