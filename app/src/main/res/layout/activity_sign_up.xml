@@ -64,4 +64,13 @@
         android:layout_toLeftOf="@+id/etuser"
         android:layout_toStartOf="@+id/etuser"
         app:srcCompat="@drawable/ic_account_box_black_24dp"/>
+
+    <TextView
+        android:id="@+id/tvready"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:text="Sudah mempunyai akun ? Klik sini"/>
 </RelativeLayout>
