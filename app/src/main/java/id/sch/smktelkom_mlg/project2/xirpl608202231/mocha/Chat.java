@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -33,10 +34,8 @@ public class Chat extends Fragment {
     EditText etinput;
     FloatingActionButton fabs;
     long time;
-
     ListView listViewpesan;
     List<Pesan> pesanList;
-
     DatabaseReference databasePesan;
 
     public Chat() {
@@ -67,8 +66,18 @@ public class Chat extends Fragment {
         });
 
 
+        listViewpesan.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+                return true;
+            }
+        });
+
         return view;
     }
+
 
     @Override
     public void onStart() {
@@ -118,6 +127,9 @@ public class Chat extends Fragment {
             Pesan pesan1 = new Pesan(id, nama, tanggal, pesan);
 
             databasePesan.child(id).setValue(pesan1);
+            etinput.setText("");
+
+
         }
 
 
