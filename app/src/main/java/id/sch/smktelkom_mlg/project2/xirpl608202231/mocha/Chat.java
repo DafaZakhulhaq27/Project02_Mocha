@@ -9,13 +9,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ListView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -27,6 +33,9 @@ public class Chat extends Fragment {
     EditText etinput;
     FloatingActionButton fabs;
     long time;
+
+    ListView listViewpesan;
+    List<Pesan> pesanList;
 
     DatabaseReference databasePesan;
 
@@ -45,7 +54,8 @@ public class Chat extends Fragment {
 
         etinput = (EditText) view.findViewById(R.id.input);
         fabs = (FloatingActionButton) view.findViewById(R.id.fab);
-
+        listViewpesan = (ListView) view.findViewById(R.id.list_of_chat);
+        pesanList = new ArrayList<>();
 
         fabs.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +68,35 @@ public class Chat extends Fragment {
 
 
         return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        databasePesan.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                pesanList.clear();
+                for (DataSnapshot pesansnapshot : dataSnapshot.getChildren()) {
+                    Pesan pesan = pesansnapshot.getValue(Pesan.class);
+
+                    pesanList.add(pesan);
+                }
+
+                PesanList adapter = new PesanList(getActivity(), pesanList);
+                listViewpesan.setAdapter(adapter);
+
+            }
+
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
     private void addpesan() {
