@@ -78,17 +78,11 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if (task.isSuccessful()) {
-
                     Toast.makeText(SignUp.this, "Berhasil Mendaftar", Toast.LENGTH_LONG).show();
                     finish();
                     startActivity(new Intent(getApplicationContext(), Main.class));
-
-
-
                 } else {
-
                     Toast.makeText(SignUp.this, "Gagal Mendaftar", Toast.LENGTH_LONG).show();
-
                 }
                 progressDialog.dismiss();
 

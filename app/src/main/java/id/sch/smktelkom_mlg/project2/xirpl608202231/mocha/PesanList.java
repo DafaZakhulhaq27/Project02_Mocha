@@ -2,6 +2,7 @@ package id.sch.smktelkom_mlg.project2.xirpl608202231.mocha;
 
 import android.app.Activity;
 import android.support.annotation.NonNull;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,7 +44,7 @@ public class PesanList extends ArrayAdapter<Pesan> {
         Pesan pesan = pesanList.get(position);
 
         user.setText(pesan.getNama());
-        tanggal.setText("" + pesan.getTanggal());
+        tanggal.setText(DateFormat.format("dd-MM-yyyy (hh:mm:ss)", pesan.getTanggal()));
         teks.setText(pesan.getText());
 
         return ListViewItem;

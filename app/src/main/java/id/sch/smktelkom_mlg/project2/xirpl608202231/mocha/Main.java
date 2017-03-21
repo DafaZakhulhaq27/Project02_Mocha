@@ -159,6 +159,11 @@ public class Main extends AppCompatActivity {
             if (position == 0)
 
                 return new Chat();
+
+            else if (position == 2)
+
+                return new JumlahUser();
+
             else
 
             return PlaceholderFragment.newInstance(position + 1);
