@@ -103,6 +103,19 @@ public class Main extends AppCompatActivity {
             startActivity(new Intent(this, Login.class));
             return true;
         }
+        if (id == R.id.Help) {
+
+            finish();
+            startActivity(new Intent(this, Bantuan.class));
+            return true;
+        }
+        if (id == R.id.AboutUs) {
+
+            firebaseAuth.signOut();
+            finish();
+            startActivity(new Intent(this, TentangKita.class));
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
