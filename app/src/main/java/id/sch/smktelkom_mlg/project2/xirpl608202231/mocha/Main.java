@@ -160,22 +160,15 @@ public class Main extends AppCompatActivity {
 
                 return new Chat();
 
-            else if (position == 2)
-
-                return new JumlahUser();
-
-
-            else if (position == 1)
+            else
                 return new EventFragment();
 
-            else
-            return PlaceholderFragment.newInstance(position + 1);
         }
 
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 2;
         }
 
         @Override
@@ -185,8 +178,6 @@ public class Main extends AppCompatActivity {
                     return "Chat";
                 case 1:
                     return "Event";
-                case 2:
-                    return "User";
             }
             return null;
         }
