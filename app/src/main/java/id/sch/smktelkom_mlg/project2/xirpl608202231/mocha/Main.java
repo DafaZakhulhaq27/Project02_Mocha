@@ -164,8 +164,11 @@ public class Main extends AppCompatActivity {
 
                 return new JumlahUser();
 
-            else
 
+            else if (position == 1)
+                return new EventFragment();
+
+            else
             return PlaceholderFragment.newInstance(position + 1);
         }
 
