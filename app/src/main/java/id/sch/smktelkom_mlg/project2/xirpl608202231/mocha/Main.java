@@ -1,6 +1,7 @@
 package id.sch.smktelkom_mlg.project2.xirpl608202231.mocha;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -103,10 +104,13 @@ public class Main extends AppCompatActivity {
             startActivity(new Intent(this, Login.class));
             return true;
         }
-        if (id == R.id.Help) {
+        if (id == R.id.Feedback) {
 
             finish();
-            startActivity(new Intent(this, Bantuan.class));
+            Uri webpage = Uri.parse("https://mail.google.com/mail/u/2/#inbox?compose=new");
+            Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+            if (intent.resolveActivity(getPackageManager()) != null)
+                startActivity(intent);
             return true;
         }
         if (id == R.id.AboutUs) {
@@ -119,6 +123,7 @@ public class Main extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 
     /**
      * A placeholder fragment containing a simple view.

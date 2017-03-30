@@ -8,9 +8,9 @@
         android:title="SignOut"
         app:showAsAction="never"/>
     <item
-        android:id="@+id/Help"
+        android:id="@+id/Feedback"
         android:orderInCategory="100"
-        android:title="Help"
+        android:title="Send Feedback"
         app:showAsAction="never"/>
     <item
         android:id="@+id/AboutUs"
