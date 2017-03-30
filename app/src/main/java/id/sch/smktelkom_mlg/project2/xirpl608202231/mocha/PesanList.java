@@ -45,7 +45,7 @@ public class PesanList extends ArrayAdapter<Pesan> {
         Pesan pesan = pesanList.get(position);
 
         user.setText(pesan.getNama());
-        tanggal.setText(DateFormat.format("dd-MM-yyyy (hh:mm:ss)", pesan.getTanggal()));
+        tanggal.setText(DateFormat.format("dd-MM-yyy |hh:mm|", pesan.getTanggal()));
         teks.setText(pesan.getText());
 
         return ListViewItem;
