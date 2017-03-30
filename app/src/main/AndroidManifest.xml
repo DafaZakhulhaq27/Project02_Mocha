@@ -18,14 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Login" />
         <activity
             android:name=".Main"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".Bantuan"></activity>
-        <activity android:name=".TentangKita"></activity>
-        <activity android:name=".InputEvent"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".TentangKita" />
+        <activity android:name=".InputEvent" />
     </application>
 
 </manifest>
