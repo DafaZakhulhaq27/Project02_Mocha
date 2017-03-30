@@ -24,6 +24,14 @@
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".TentangKita" />
+        <activity
+            android:name=".Input"
+            android:label="@string/title_activity_input"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".InputEvent"
+            android:label="@string/title_activity_input_event"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

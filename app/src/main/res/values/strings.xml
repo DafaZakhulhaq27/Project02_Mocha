@@ -7,4 +7,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="reply_label" />
+    <string name="title_activity_input">Input</string>
+    <string name="title_activity_input_event">InputEvent</string>
 </resources>
