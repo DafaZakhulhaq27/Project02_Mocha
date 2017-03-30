@@ -43,7 +43,6 @@ public class Guru extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         mAdapter = new GuruAdapter(mList);
         recyclerView.setAdapter(mAdapter);
-
         fillData();
         return view;
     }
@@ -54,7 +53,7 @@ public class Guru extends Fragment {
         String[] arDeskripsi = resources.getStringArray(R.array.mapel);
         TypedArray a = resources.obtainTypedArray(R.array.foto_guru);
         Drawable[] arFoto = new Drawable[a.length()];
-        
+
         for (int i = 0; i < arFoto.length; i++) {
             BitmapDrawable bd = (BitmapDrawable) a.getDrawable(i);
             RoundedBitmapDrawable rbd =
