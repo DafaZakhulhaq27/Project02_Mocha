@@ -177,7 +177,7 @@ public class Main extends AppCompatActivity {
             if (position == 0)
                 return new Chat();
             else if (position == 1)
-                return new EventFragment();
+                return new FragmentEvent();
             else
                 return new Guru();
         }
