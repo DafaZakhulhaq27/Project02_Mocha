@@ -1,9 +1,11 @@
 package id.sch.smktelkom_mlg.project2.xirpl608202231.mocha;
 
 
+import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -45,7 +47,7 @@ public class Chat extends Fragment {
     ListView listViewpesan;
     List<Pesan> pesanList;
     DatabaseReference databasePesan;
-
+    String nama;
     public Chat() {
         // Required empty public constructor
     }
@@ -79,20 +81,43 @@ public class Chat extends Fragment {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, final int i, long l) {
 
-                databasePesan.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                builder1.setMessage("Hapus Semua Pesan");
+                builder1.setCancelable(true);
 
-                        dataSnapshot.getRef().removeValue();
+                builder1.setPositiveButton(
+                        "Ya",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                databasePesan.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        dataSnapshot.getRef().removeValue();
 
 
-                    }
+                                    }
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
 
-                    }
-                });
+                                    }
+                                });
+
+                            }
+                        });
+
+                builder1.setNegativeButton(
+                        "Tidak",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+
 
 
                 return true;
@@ -116,7 +141,9 @@ public class Chat extends Fragment {
                     Pesan pesan = pesansnapshot.getValue(Pesan.class);
 
                     pesanList.add(pesan);
+
                     notif();
+
 
                 }
 
@@ -143,7 +170,7 @@ public class Chat extends Fragment {
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
         String pesan = etinput.getText().toString().trim();
-        String nama = user.getEmail();
+        nama = user.getEmail();
         Long tanggal = time;
 
         if (!TextUtils.isEmpty(pesan)) {
@@ -165,6 +192,7 @@ public class Chat extends Fragment {
     private void notif() {
 
 
+        // Key for the string that's delivered in the action's intent.
         // define sound URI, the sound to be played when there's a notification
 
         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);

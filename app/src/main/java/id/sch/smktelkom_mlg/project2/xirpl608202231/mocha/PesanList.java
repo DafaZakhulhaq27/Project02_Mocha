@@ -29,6 +29,7 @@ public class PesanList extends ArrayAdapter<Pesan> {
 
     }
 
+
     @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -47,7 +48,7 @@ public class PesanList extends ArrayAdapter<Pesan> {
         tanggal.setText(DateFormat.format("dd-MM-yyyy (hh:mm:ss)", pesan.getTanggal()));
         teks.setText(pesan.getText());
 
-
         return ListViewItem;
     }
+
 }
