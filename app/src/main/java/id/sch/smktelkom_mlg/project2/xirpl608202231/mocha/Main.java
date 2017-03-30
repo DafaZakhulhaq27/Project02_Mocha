@@ -106,17 +106,21 @@ public class Main extends AppCompatActivity {
         }
         if (id == R.id.Feedback) {
 
-            finish();
-            Uri webpage = Uri.parse("https://mail.google.com/mail/u/2/#inbox?compose=new");
-            Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-            if (intent.resolveActivity(getPackageManager()) != null)
-                startActivity(intent);
-            return true;
+            String[] TO = {"mokletchat17@gmail.com"};
+            Intent emailIntent = new Intent(Intent.ACTION_SEND);
+            emailIntent.setData(Uri.parse("mialto:"));
+            emailIntent.setType("text/plain");
+
+            emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Feedback from Mocha-fans");
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "Hi, Mocha admin.. your apps is");
+            if (emailIntent.resolveActivity(getPackageManager()) != null)
+                startActivity(emailIntent);
+            return false;
         }
         if (id == R.id.AboutUs) {
 
             firebaseAuth.signOut();
-            finish();
             startActivity(new Intent(this, TentangKita.class));
             return true;
         }
