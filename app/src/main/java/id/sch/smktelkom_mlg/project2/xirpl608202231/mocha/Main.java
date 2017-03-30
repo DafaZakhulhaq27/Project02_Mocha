@@ -175,18 +175,17 @@ public class Main extends AppCompatActivity {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
             if (position == 0)
-
                 return new Chat();
-
-            else
+            else if (position == 1)
                 return new EventFragment();
-
+            else
+                return new Guru();
         }
 
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 2;
+            return 3;
         }
 
         @Override
@@ -196,6 +195,8 @@ public class Main extends AppCompatActivity {
                     return "Chat";
                 case 1:
                     return "Event";
+                case 2:
+                    return "Teachers";
             }
             return null;
         }
