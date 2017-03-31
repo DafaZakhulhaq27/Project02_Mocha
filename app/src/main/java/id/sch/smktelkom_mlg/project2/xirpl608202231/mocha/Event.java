@@ -8,6 +8,7 @@ public class Event {
 
     String idev;
     String judulev;
+    String deskripev;
     Long tanggalev;
     String author;
 
@@ -16,9 +17,10 @@ public class Event {
 
     }
 
-    public Event(String idev, String judulev, Long tanggalev, String author) {
+    public Event(String idev, String judulev, String deskripev, Long tanggalev, String author) {
         this.idev = idev;
         this.judulev = judulev;
+        this.deskripev = deskripev;
         this.tanggalev = tanggalev;
         this.author = author;
 
@@ -30,6 +32,10 @@ public class Event {
 
     public String getJudulev() {
         return judulev;
+    }
+
+    public String getDeskripev() {
+        return deskripev;
     }
 
     public Long getTanggalev() {

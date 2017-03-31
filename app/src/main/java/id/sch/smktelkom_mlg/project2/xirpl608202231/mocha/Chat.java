@@ -61,7 +61,6 @@ public class Chat extends Fragment {
 
 
         databasePesan = FirebaseDatabase.getInstance().getReference("Pesan");
-
         etinput = (EditText) view.findViewById(R.id.input);
         fabs = (FloatingActionButton) view.findViewById(R.id.fab);
         listViewpesan = (ListView) view.findViewById(R.id.list_of_chat);
@@ -70,9 +69,7 @@ public class Chat extends Fragment {
         fabs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 addpesan();
-
             }
         });
 
@@ -80,7 +77,6 @@ public class Chat extends Fragment {
         listViewpesan.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, final int i, long l) {
-
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
                 builder1.setMessage("Hapus Semua Pesan");
                 builder1.setCancelable(true);
@@ -92,21 +88,15 @@ public class Chat extends Fragment {
                                 databasePesan.addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(DataSnapshot dataSnapshot) {
-
                                         dataSnapshot.getRef().removeValue();
-
-
                                     }
-
                                     @Override
                                     public void onCancelled(DatabaseError databaseError) {
 
                                     }
                                 });
-
                             }
                         });
-
                 builder1.setNegativeButton(
                         "Tidak",
                         new DialogInterface.OnClickListener() {
@@ -114,16 +104,11 @@ public class Chat extends Fragment {
                                 dialog.cancel();
                             }
                         });
-
                 AlertDialog alert11 = builder1.create();
                 alert11.show();
-
-
-
                 return true;
             }
         });
-
         return view;
     }
 
@@ -139,68 +124,44 @@ public class Chat extends Fragment {
                 pesanList.clear();
                 for (DataSnapshot pesansnapshot : dataSnapshot.getChildren()) {
                     Pesan pesan = pesansnapshot.getValue(Pesan.class);
-
                     pesanList.add(pesan);
-
                     notif();
-
-
                 }
-
                 PesanList adapter = new PesanList(getActivity(), pesanList);
                 listViewpesan.setAdapter(adapter);
-
             }
-
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
         });
-
     }
 
     private void addpesan() {
-
-
         firebaseAuth = FirebaseAuth.getInstance();
-
         time = new Date().getTime();
         FirebaseUser user = firebaseAuth.getCurrentUser();
-
         String pesan = etinput.getText().toString().trim();
         nama = user.getEmail();
         Long tanggal = time;
 
         if (!TextUtils.isEmpty(pesan)) {
-
-
             String id = databasePesan.push().getKey();
-
             Pesan pesan1 = new Pesan(id, nama, tanggal, pesan);
-
             databasePesan.child(id).setValue(pesan1);
             etinput.setText("");
-
-
         }
-
-
     }
 
     private void notif() {
-
-
         // Key for the string that's delivered in the action's intent.
         // define sound URI, the sound to be played when there's a notification
-
         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         Intent intent = new Intent(getActivity(), Main.class);
         PendingIntent pIntent = PendingIntent.getActivity(getActivity(), 0, intent, 0);
         Notification mNotification = new Notification.Builder(getActivity()).setContentTitle("MOCHA")
-                .setContentText("Pesan Baru")
-                .setSmallIcon(R.drawable.ic_message_black_24dp)
+                .setContentText("New Message")
+                .setSmallIcon(R.drawable.mocha2)
                 .setContentIntent(pIntent)
                 .setSound(soundUri)
                 .build();

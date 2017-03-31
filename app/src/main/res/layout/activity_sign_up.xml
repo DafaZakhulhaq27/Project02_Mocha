@@ -11,11 +11,12 @@
         android:id="@+id/etuser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/tvready"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignRight="@+id/tvready"
         android:layout_marginTop="188dp"
         android:ems="10"
-        android:inputType="textEmailAddress"/>
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/etpass"
@@ -38,7 +39,7 @@
         android:layout_alignStart="@+id/etpass"
         android:layout_below="@+id/etpass"
         android:layout_marginTop="16dp"
-        android:text="SignUp"/>
+        android:text="Sign Up" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -61,9 +62,8 @@
         android:layout_alignTop="@+id/etuser"
         android:layout_marginLeft="18dp"
         android:layout_marginStart="18dp"
-        android:layout_toLeftOf="@+id/etuser"
         android:layout_toStartOf="@+id/etuser"
-        app:srcCompat="@drawable/ic_account_box_black_24dp"/>
+        app:srcCompat="@drawable/ic_account_box_black_24dp" />
 
     <TextView
         android:id="@+id/tvready"
@@ -72,5 +72,16 @@
         android:layout_below="@+id/etup"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
-        android:text="Sudah mempunyai akun ? Klik sini"/>
+        android:text="Already have an Account? Click here" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView2"
+        android:layout_alignEnd="@+id/etuser"
+        android:layout_alignRight="@+id/etuser"
+        android:layout_marginBottom="47dp"
+        app:srcCompat="@drawable/mocha1" />
+
 </RelativeLayout>
