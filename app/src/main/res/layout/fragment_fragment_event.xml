@@ -4,35 +4,36 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
+    android:weightSum="1"
     tools:context="id.sch.smktelkom_mlg.project2.xirpl608202231.mocha.FragmentEvent">
-
-    <ListView
-        android:id="@+id/list_of_event"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="16dp"
-        android:stackFromBottom="true"
-        android:transcriptMode="alwaysScroll" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btnaddevent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/list_of_event"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/list_of_event"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="bottom|end"
-        android:layout_marginLeft="121dp"
-        android:layout_marginStart="121dp"
+        android:layout_marginBottom="5dp"
         android:src="@drawable/ic_add_black_24dp"
         android:tint="@android:color/white"
         app:fabSize="normal" />
+
+    <ListView
+        android:id="@+id/list_of_event"
+        android:layout_width="match_parent"
+        android:layout_height="392dp"
+        android:layout_above="@+id/btnaddevent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="7"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="16dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll" />
 
 </RelativeLayout>
 

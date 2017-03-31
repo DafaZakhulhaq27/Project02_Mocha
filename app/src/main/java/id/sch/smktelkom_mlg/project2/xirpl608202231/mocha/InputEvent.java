@@ -31,9 +31,7 @@ public class InputEvent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_event);
 
-
         databaseEvent = FirebaseDatabase.getInstance().getReference("Event");
-
         editjudul = (EditText) findViewById(R.id.editTextNama);
         editdeskrip = (EditText) findViewById(R.id.editTextDeskripsi);
         simpan = (Button) findViewById(R.id.buttonSimpan);
@@ -42,12 +40,10 @@ public class InputEvent extends AppCompatActivity {
         simpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 addevent();
                 finish();
             }
         });
-
     }
 
     private void addevent() {
@@ -55,24 +51,16 @@ public class InputEvent extends AppCompatActivity {
         time = new Date().getTime();
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
-
         String judul = editjudul.getText().toString().trim();
-
+        String deskripsi = editdeskrip.getText().toString().trim();
         long tanggal = time;
         String author = user.getEmail();
 
-
         if (!TextUtils.isEmpty(judul)) {
-
             String idev = databaseEvent.push().getKey();
-
-            Event event1 = new Event(idev, judul, tanggal, author);
-
+            Event event1 = new Event(idev, judul, deskripsi, tanggal, author);
             databaseEvent.child(idev).setValue(event1);
-
         }
     }
-
-
 }
 

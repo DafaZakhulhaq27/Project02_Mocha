@@ -8,10 +8,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_margin="8dp"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -36,12 +37,21 @@
                 tools:text="dada" />
 
             <TextView
+                android:id="@+id/tvdeskrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="20dp"
+                tools:text="dadi" />
+
+            <TextView
                 android:id="@+id/tvtime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 tools:text="dadi" />
 
             <LinearLayout
@@ -76,8 +86,7 @@
 
             android:id="@+id/imageView5"
             android:layout_width="match_parent"
-            android:layout_height="95dp"
-            android:layout_weight="0.93"
+            android:layout_height="match_parent"
             android:src="@drawable/ic_insert_photo_black_24dp" />
     </LinearLayout>
 

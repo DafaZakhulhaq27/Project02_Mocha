@@ -38,12 +38,15 @@ public class EventList extends ArrayAdapter<Event> {
 
 
         TextView judul = (TextView) ListViewEvent.findViewById(R.id.tvjudul);
+        TextView des = (TextView) ListViewEvent.findViewById(R.id.tvdeskrip);
         TextView waktu = (TextView) ListViewEvent.findViewById(R.id.tvtime);
         TextView by = (TextView) ListViewEvent.findViewById(R.id.tvby);
+
 
         Event event = eventList.get(position);
 
         judul.setText(event.getJudulev());
+        des.setText(event.getDeskripev());
         waktu.setText(DateFormat.format("dd-MM-yyy |hh:mm|", event.getTanggalev()));
         by.setText(event.getAuthor());
 

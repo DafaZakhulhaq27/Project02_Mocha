@@ -30,7 +30,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-
+        setTitle("Sign Up");
         firebaseAuth = FirebaseAuth.getInstance();
 
         //lek user gak ana

@@ -53,6 +53,8 @@ public class FragmentEvent extends Fragment {
                 startActivity(new Intent(getActivity(), InputEvent.class));
             }
         });
+
+
         return view;
     }
 
