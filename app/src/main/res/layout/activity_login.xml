@@ -73,7 +73,7 @@
         android:layout_below="@+id/etin"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:text="Dont have an Account? Click here" />
+        android:text="Don't have an Account? Click here" />
 
     <ImageView
         android:id="@+id/imageView10"
