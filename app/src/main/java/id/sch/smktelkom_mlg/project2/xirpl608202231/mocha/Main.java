@@ -182,8 +182,10 @@ public class Main extends AppCompatActivity {
                 return new Chat();
             else if (position == 1)
                 return new FragmentEvent();
-            else
+            else if (position == 2)
                 return new Guru();
+            else
+                return PlaceholderFragment.newInstance(position + 1);
         }
 
         @Override

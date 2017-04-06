@@ -116,26 +116,50 @@ public class Chat extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-
+        pesanList.clear();
         databasePesan.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                pesanList.clear();
+
                 for (DataSnapshot pesansnapshot : dataSnapshot.getChildren()) {
                     Pesan pesan = pesansnapshot.getValue(Pesan.class);
                     pesanList.add(pesan);
-                    notif();
+
                 }
+
                 PesanList adapter = new PesanList(getActivity(), pesanList);
                 listViewpesan.setAdapter(adapter);
+                notif();
+
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
+
         });
+
     }
+
+    private void notif() {
+        // Key for the string that's delivered in the action's intent.
+        // define sound URI, the sound to be played when there's a notification
+        Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        Intent intent = new Intent(getActivity(), Main.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        PendingIntent pIntent = PendingIntent.getActivity(getActivity(), 0, intent, 0);
+        Notification mNotification = new Notification.Builder(getActivity()).setContentTitle("MOCHA")
+                .setContentText("New Message")
+                .setSmallIcon(R.drawable.mocha2)
+                .setContentIntent(pIntent)
+                .setAutoCancel(true)
+                .setSound(soundUri)
+                .build();
+        NotificationManager notificationManager = (NotificationManager) getActivity().getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(0, mNotification);
+    }
+
 
     private void addpesan() {
         firebaseAuth = FirebaseAuth.getInstance();
@@ -151,30 +175,9 @@ public class Chat extends Fragment {
             databasePesan.child(id).setValue(pesan1);
             etinput.setText("");
         }
+
     }
 
-    private void notif() {
-        // Key for the string that's delivered in the action's intent.
-        // define sound URI, the sound to be played when there's a notification
-        Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        Intent intent = new Intent(getActivity(), Main.class);
-        PendingIntent pIntent = PendingIntent.getActivity(getActivity(), 0, intent, 0);
-        Notification mNotification = new Notification.Builder(getActivity()).setContentTitle("MOCHA")
-                .setContentText("New Message")
-                .setSmallIcon(R.drawable.mocha2)
-                .setContentIntent(pIntent)
-                .setSound(soundUri)
-                .build();
-        NotificationManager notificationManager = (NotificationManager) getActivity().getSystemService(NOTIFICATION_SERVICE);
-        notificationManager.notify(0, mNotification);
-    }
 
-    public void cancelNotification(int notificationId) {
-        if (NOTIFICATION_SERVICE != null) {
-            String ns = NOTIFICATION_SERVICE;
-            NotificationManager nMgr = (NotificationManager) getActivity().getApplicationContext().getSystemService(ns);
-            nMgr.cancel(notificationId);
-        }
-    }
 }
 

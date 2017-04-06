@@ -37,7 +37,7 @@ public class Guru extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_guru, container, false);
-
+        mList.clear();
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
@@ -46,6 +46,7 @@ public class Guru extends Fragment {
         fillData();
         return view;
     }
+
 
     private void fillData() {
         Resources resources = getResources();

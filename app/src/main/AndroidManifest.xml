@@ -28,6 +28,7 @@
             android:name=".InputEvent"
             android:label="@string/title_activity_input_event"
             android:theme="@style/AppTheme.NoActionBar" />
+
     </application>
 
 </manifest>
