@@ -2,6 +2,7 @@
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
+
                 android:layout_height="match_parent"
                 tools:context="id.sch.smktelkom_mlg.project2.xirpl608202231.mocha.Chat">
 
@@ -12,6 +13,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+
         android:clickable="true"
         android:src="@drawable/ic_send_black_24dp"
         android:tint="@android:color/white"
@@ -23,12 +25,14 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@id/fab">
+        android:layout_toLeftOf="@id/fab"
+        android:background="@color/putih">
 
         <EditText
             android:id="@+id/input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:hint="Input"
             />
     </android.support.design.widget.TextInputLayout>
