@@ -7,7 +7,8 @@
     android:layout_marginBottom="16dp"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
-    android:layout_marginTop="8dp">
+    android:layout_marginTop="8dp"
+    android:background="@drawable/bgmain">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -16,6 +17,7 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
+
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:orientation="vertical"
@@ -45,9 +47,12 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="5dp"
             android:ellipsize="end"
+            android:fontFamily="agency fb"
             android:maxLines="1"
             android:text="About Us"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textSize="38dp" />
 
         <RelativeLayout
         android:layout_width="match_parent"

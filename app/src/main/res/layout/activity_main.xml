@@ -4,7 +4,8 @@
                                                  xmlns:tools="http://schemas.android.com/tools"
                                                  android:id="@+id/main_content"
                                                  android:layout_width="match_parent"
-                                                 android:layout_height="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgmain"
                                                  android:fitsSystemWindows="true"
                                                  tools:context="id.sch.smktelkom_mlg.project2.xirpl608202231.mocha.Main">
 

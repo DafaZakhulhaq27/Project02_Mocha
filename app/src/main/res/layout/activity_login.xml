@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bgmain"
     tools:context="id.sch.smktelkom_mlg.project2.xirpl608202231.mocha.Login">
 
 
@@ -22,12 +23,12 @@
         android:id="@+id/etpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/etuser"
-        android:layout_alignRight="@+id/etuser"
         android:layout_below="@+id/etuser"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="19dp"
+        android:layout_toEndOf="@+id/imageView2"
+        android:layout_toRightOf="@+id/imageView2"
         android:ems="10"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/etin"
@@ -57,23 +58,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/etpass"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/etuser"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp"
         android:layout_toLeftOf="@+id/etuser"
-        android:layout_toStartOf="@+id/etuser"
         app:srcCompat="@drawable/ic_account_box_black_24dp" />
 
     <TextView
         android:id="@+id/tvready"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/etin"
+        android:layout_alignRight="@+id/etin"
         android:layout_below="@+id/etin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Don't have an Account? Click here" />
+        android:text=" Click here"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold|italic" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -82,7 +80,20 @@
         android:layout_above="@+id/imageView2"
         android:layout_alignEnd="@+id/etuser"
         android:layout_alignRight="@+id/etuser"
-        android:layout_marginBottom="47dp"
+        android:layout_marginBottom="15dp"
         app:srcCompat="@drawable/mocha1" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etin"
+        android:layout_alignStart="@+id/etin"
+        android:layout_below="@+id/etin"
+        android:layout_toLeftOf="@+id/tvready"
+        android:layout_toStartOf="@+id/tvready"
+        android:text="Dont Have an Account ?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="13sp" />
 
 </RelativeLayout>
