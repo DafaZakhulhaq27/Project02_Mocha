@@ -3,11 +3,11 @@ package id.sch.smktelkom_mlg.project2.xirpl608202231.mocha;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -46,7 +46,7 @@ public class FragmentEvent extends Fragment {
         eventList = new ArrayList<>();
 
 
-        FloatingActionButton btnEvent = (FloatingActionButton) view.findViewById(R.id.btnaddevent);
+        Button btnEvent = (Button) view.findViewById(R.id.btnaddevent);
         btnEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

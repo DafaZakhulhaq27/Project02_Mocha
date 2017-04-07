@@ -4,9 +4,9 @@
     <color name="colorPrimaryDark">#7c0c0e</color>
     <color name="colorAccent">#c14830</color>
 
-    <color name="bg_s1">#9b171b</color>
-    <color name="bg_s2">#fab700</color>
-    <color name="bg_s3">#ffffff</color>
+    <color name="bg_s1">#e4760f</color>
+    <color name="bg_s2">#d90d2c</color>
+    <color name="bg_s3">#d1b512</color>
 
     <color name="dote_active">#2b2828</color>
     <color name="dote_inactive">#645e5e</color>

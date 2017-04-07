@@ -1,23 +1,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    android:weightSum="1"
-    tools:context="id.sch.smktelkom_mlg.project2.xirpl608202231.mocha.FragmentEvent">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:weightSum="1"
+                tools:context="id.sch.smktelkom_mlg.project2.xirpl608202231.mocha.FragmentEvent">
 
-    <android.support.design.widget.FloatingActionButton
+    <Button
         android:id="@+id/btnaddevent"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="5dp"
-        android:src="@drawable/ic_add_black_24dp"
+        android:text="Tambah Event"
+        android:textColor="@color/colorPrimaryDark"
         android:tint="@android:color/white"
-        app:fabSize="normal" />
+        />
 
     <ListView
         android:id="@+id/list_of_event"
