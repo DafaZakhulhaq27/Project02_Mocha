@@ -15,6 +15,7 @@ public class Event {
 
     public Event() {
 
+
     }
 
     public Event(String idev, String judulev, String deskripev, Long tanggalev, String author) {

@@ -20,7 +20,7 @@
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@color/event"
+            android:background="#ffffff"
             android:orientation="vertical">
 
 
